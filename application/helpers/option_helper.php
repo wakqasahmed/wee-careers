@@ -13,11 +13,13 @@ function add_option($name,$value)
     if(is_array($value))
     {
         $data_type='array';
+  	  $value = preg_replace('!s:(\d+):"(.*?)";!e', "'s:'.strlen('$2').':\"$2\";'", $value);        
         $value=serialize($value);
     }
     elseif(is_object($value))
     {
         $data_type='object';
+  	  $value = preg_replace('!s:(\d+):"(.*?)";!e', "'s:'.strlen('$2').':\"$2\";'", $value);                
         $value=serialize($value);
     }
  
@@ -38,11 +40,13 @@ function update_option($name,$value)
     if(is_array($value))
     {
         $data_type='array';
+  	  $value = preg_replace('!s:(\d+):"(.*?)";!e', "'s:'.strlen('$2').':\"$2\";'", $value);                
         $value=serialize($value);
     }
     elseif(is_object($value))
     {
         $data_type='object';
+  	  $value = preg_replace('!s:(\d+):"(.*?)";!e', "'s:'.strlen('$2').':\"$2\";'", $value);                
         $value=serialize($value);
     }
  
@@ -69,7 +73,10 @@ function get_option($name)
     if('text'==$option->option_type)
         $value=$option->option_value;
     elseif('array'==$option->option_type || 'object'==$option->option_type)
-        $value=unserialize($option->option_value);
+    {
+        $value = preg_replace('!s:(\d+):"(.*?)";!e', "'s:'.strlen('$2').':\"$2\";'", $option->option_value);                  
+        $value=unserialize($value);
+    }
  
     return $value;
 }
