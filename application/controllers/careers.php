@@ -62,11 +62,34 @@ class Careers extends MY_Controller {
     
 	public function index($renderData="")
 	{
+			// load language file
+			$this->lang->load('careers');		
+
+			$this->title = "Careers";
+			$this->keywords = "bazarstore careers, bazarstore jobs";		
+		
             $this->_render('pages/main_view',$renderData);
 	}
+	
+	public function human_resource($renderData="")
+	{
+			// load language file
+			$this->lang->load('careers');		
+
+			$this->title = "Human Resource";
+			$this->keywords = "bazarstore careers, bazarstore jobs";		
+		
+            $this->_render('pages/hr_view',$renderData);
+	}	
         
         public function hiring($renderData="")
         {
+			// load language file
+			$this->lang->load('careers');
+						
+			$this->title = "Vacancy Explorer - Careers";
+			$this->keywords = "bazarstore careers, bazarstore jobs";			
+			
             $this->load->model('Career_model');
             $result = $this->Career_model->get_all_positions();            
             
@@ -79,6 +102,12 @@ class Careers extends MY_Controller {
         
         public function apply($position_id = -1, $renderData="")
         {
+			// load language file
+			$this->lang->load('careers');
+						
+			$this->title = "Apply Now - Careers";
+			$this->keywords = "bazarstore careers, bazarstore jobs";			
+			
             $this->load->model('Career_model');
             $result = $this->Career_model->job_positions();                                    
             $this->view_data['job_positions'] = $result;
@@ -95,6 +124,12 @@ class Careers extends MY_Controller {
 
         public function post_job($renderData="")
         {
+			// load language file
+			$this->lang->load('careers');			
+			
+			$this->title = "Post Job (Admin) - Careers";
+			$this->keywords = "bazarstore careers, bazarstore jobs";			
+			
             $this->load->model('Career_model');
             $result = $this->Career_model->get_all_departments();                                    
             $this->view_data['departments'] = $result;
@@ -110,6 +145,12 @@ class Careers extends MY_Controller {
         
         public function job_applications($renderData="")
         {
+			// load language file
+			$this->lang->load('careers');			
+			
+			$this->title = "Job Applications (Admin) - Careers";
+			$this->keywords = "bazarstore careers, bazarstore jobs";			
+			
             $this->load->model('Career_model');
             $result = $this->Career_model->get_all_applications();            
             
@@ -120,10 +161,18 @@ class Careers extends MY_Controller {
         
         function submit_application($renderData="")
         {
+			// load language file
+			$this->lang->load('careers');			
+			
+			$this->title = "Submit Job Application - Careers";
+			$this->keywords = "bazarstore careers, bazarstore jobs";			
+			
             $this->load->library('user_agent');
             $this->load->model('Career_model');
 
-            $option_data = $this->get_options();            $result = $this->Career_model->job_positions();                                    
+            $option_data = $this->get_options();
+
+            $result = $this->Career_model->job_positions();                                    
             $this->view_data['job_positions'] = $result;            
             $this->view_data['show_upload_msg'] = false;
             $this->view_data['selected_position'] = -1;            
@@ -235,7 +284,7 @@ class Careers extends MY_Controller {
                     $covernote = $this->input->post('txtCoverNote');                    
                     //$cv_path = array('upload_data' => $this->upload->data());
                     $upload_data = $this->upload->data();
-                    $cv_path = $option_data['cv_path'] . $upload_data['file_name'];
+                    $cv_path = base_url() . 'uploads/' . $upload_data['file_name'];
                     //$cv_path = 'test.com';
                     
                     $ip_address = $this->input->ip_address();
@@ -251,6 +300,12 @@ class Careers extends MY_Controller {
         
         function submit_job($renderData="")
         {
+			// load language file
+			$this->lang->load('careers');			
+			
+			$this->title = "Submit Job (Admin) - Careers";
+			$this->keywords = "bazarstore careers, bazarstore jobs";			
+			
             $this->load->library('user_agent');
             $this->load->model('Career_model');
 
@@ -310,7 +365,6 @@ class Careers extends MY_Controller {
             }
         }         
         
-
         /*
         function valid_phone_number_or_empty($value)
         {
@@ -378,13 +432,21 @@ class Careers extends MY_Controller {
         
         function show_success($name, $gender, $renderData="")
         {
+			// load language file
+			$this->lang->load('careers');			
+			
+			$this->title = "Success - Careers";
+			$this->keywords = "bazarstore careers, bazarstore jobs";			
+			
             $title = '';
             if($gender == 'M')
                 $title = 'Mr.';
             else
                 $title = 'Miss';
             
-            $this->view_data['data'] = 'Thank You, ' . $title . ' ' . $name . ', your application has been received, it will be reviewed shortly.<br> Kindly note: Only shortlisted candidates will be called for an interview.<br>HR Admin, GGI Retail';
+			$option_data = $this->get_options();
+			
+            $this->view_data['data'] = 'Thank You, ' . $title . ' ' . $name . ', your application has been received, it will be reviewed shortly.<br> Kindly note: Only shortlisted candidates will be called for an interview.<br>HR Admin, ' . $option_data['company'];
             
             $this->_render('pages/success_view', $renderData);                        
             
@@ -395,6 +457,9 @@ class Careers extends MY_Controller {
         
         function show_jobpost_success($title, $renderData="")
         {
+			$this->title = "Success Job Post - Careers";
+			$this->keywords = "bazarstore careers, bazarstore jobs";			
+			
             $this->view_data['data'] = 'Thank You, Job with the title: ' . $title . ' has been posted successfully.';
             $this->_render('pages/success_view', $renderData);                        
         }           

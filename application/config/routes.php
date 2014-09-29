@@ -41,6 +41,17 @@
 $route['default_controller'] = "careers";
 $route['404_override'] = '';
 
+// example: '/en/about' -> use controller 'about'
+$route['^az/(.+)$'] = "$1";
+$route['^en/(.+)$'] = "$1";
+$route['^tr/(.+)$'] = "$1";
+$route['^ru/(.+)$'] = "$1";
+ 
+// '/en' and '/fr' -> use default controller
+$route['^az$'] = $route['default_controller'];
+$route['^en$'] = $route['default_controller'];
+$route['^tr$'] = $route['default_controller'];
+$route['^ru$'] = $route['default_controller'];
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
