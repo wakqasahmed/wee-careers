@@ -3,7 +3,7 @@
   <span class="icon-bar"></span>
   <span class="icon-bar"></span>
 </a>
-<a class="brand" href="http://www.wakqasahmed.com">Wee Careers</a>
+<a class="brand" href="http://www.eprosol.com"><?=lang('careers.logo')?></a>
 <div class="nav-collapse collapse" id="main-menu">
  <ul class="nav" id="main-menu-left">
  <li class="<?php 
@@ -11,15 +11,17 @@
      echo isActive(uri_string(),"careers");
  else
      echo isActive($pageName,"careers");
-         ?>"><a href="<?php echo base_url()?>">Home</a></li>
- <li class="<?php echo isActive(uri_string(),"careers/hiring"); ?>"><a href="<?php echo base_url()?>careers/hiring">Vacancy Explorer</a></li>
- <li class="<?php echo isActive(uri_string(),"careers/apply"); ?>"><a href="<?php echo base_url()?>careers/apply">Apply Now</a></li>
- <li class="<?php echo isActive(uri_string(),"careers/post_job"); ?>"><a href="<?php echo base_url()?>careers/post_job">Post New Job (Admin)</a></li>
- <li class="<?php echo isActive(uri_string(),"careers/job_applications"); ?>"><a href="<?php echo base_url()?>careers/job_applications">Applicants List (Admin)</a></li>
-<!--
+         ?>"><a href="<?php echo base_url()?>"><?=lang('careers.home')?></a></li>
+ <li class="<?php echo isActive(uri_string(),"careers/hiring"); ?>"><a href="<?php echo base_url()?>careers/hiring"><?=lang('careers.vacancy_explorer')?></a></li>
+ <li class="<?php echo isActive(uri_string(),"careers/apply"); ?>"><a href="<?php echo base_url()?>careers/apply"><?=lang('careers.apply_now')?></a></li>
+ <li class="<?php echo isActive(uri_string(),"careers/post_job"); ?>"><a href="<?php echo base_url()?>careers/post_job"><?=lang('careers.post_new_job_admin')?></a></li>
+ <li class="<?php echo isActive(uri_string(),"careers/job_applications"); ?>"><a href="<?php echo base_url()?>careers/job_applications"><?=lang('careers.apply_list_admin')?></a></li>
+
  <ul class="nav pull-right" id="main-menu-right">
-   <li><a rel="tooltip" target="_blank" href="http://wakqasahmed.com/" title="Wakqas Ahmed" data-original-title="Wakqas Ahmed">Author Website <i class="icon-share-alt"></i></a></li>
-   <li><a rel="tooltip" target="_blank" href="https://wakqasahmed.github.io" title="Wakqas Ahmed at GitHub" data-original-title="Wakqas Ahmed at GitHub">View on GitHub <i class="icon-share-alt"></i></a></li>
+<li><a rel="tooltip" href="<?php echo $base_url; ?>en/careers" class="<?php if($this->lang->lang() == 'en') {echo 'lang-selected';} ?>">EN</a></li> 
+<li><a rel="tooltip" href="<?php echo $base_url; ?>ar/careers" class="<?php if($this->lang->lang() == 'ar') {echo 'lang-selected';} ?>">AR</a></li> 
+<li><a rel="tooltip" href="<?php echo $base_url;?>az/careers" class="<?php if($this->lang->lang() == 'az') {echo 'lang-selected';} ?>">AZ</a></li>
+<li><a rel="tooltip" href="<?php echo $base_url; ?>index.php/tr/careers" class="<?php if($this->lang->lang() == 'tr') {echo 'lang-selected';} ?>">TR</a></li>
+<li><a rel="tooltip" href="<?php echo $base_url; ?>index.php/ru/careers" class="<?php if($this->lang->lang() == 'ru') {echo 'lang-selected';} ?>">RU</a></li>
  </ul>
--->
 </div>

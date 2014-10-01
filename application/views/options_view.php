@@ -54,7 +54,7 @@
           <label for="company">Company</label><input type="text" id="company" class="input_text" name="company" placeholder="Wee Careers Co." required />           
           <label for="from_email">Email (Admin From)</label><input type="email" id="from_email" class="input_text" name="from_email" placeholder="noreply@yourcompany.com" required /> for auto-generated email to send to job applicant when applies for a job
           <label for="to_email">Email (Admin To)</label><input type="email" id="to_email" class="input_text" name="to_email" placeholder="you@youremail.com" required /> for auto-generated email to send to you when job applicant applies for a job         
-          <label for="cv_path">CV Path</label><input type="text" id="cv_path" class="input_text" name="cv_path" placeholder="http://www.yoursite.com/wee_careers/uploads/" required /> absolute path of upload folder with trailing slash                    
+          <!--<label for="cv_path">CV Path</label><input type="text" id="cv_path" class="input_text" name="cv_path" placeholder="http://www.yoursite.com/wee_careers/uploads/" required /> absolute path of upload folder with trailing slash -->                   
           <input type="submit" value="Update" id="submit" />
         </fieldset>
 		  </form>

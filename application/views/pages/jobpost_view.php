@@ -15,17 +15,6 @@ $.validator.setDefaults({
 */
 $().ready(function() {
 	// validate the comment form when it is submitted
-/*
-        $("#formApply").validate({
-			errorElement: "span",
-			errorPlacement: function(error, element) {
-				error.appendTo( element.parent("div").next("span") );
-			},
-			success: function(label) {
-				label.text("ok!").addClass("success");
-			}            
-            
-        });*/
 	$("#formJobPost").validate();                
 });
 

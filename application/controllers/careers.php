@@ -10,11 +10,11 @@ class Careers extends MY_Controller {
         public function add_options($renderData="")
         {
             $config = array(
-                           array(
+                           /*array(
                                  'field'   => 'cv_path', 
                                  'label'   => 'CV Path', 
                                  'rules'   => 'trim|max_length[200]|required|xss_clean'
-                              ),
+                              ),*/
                            array(
                                  'field'   => 'company', 
                                  'label'   => 'Company', 
@@ -47,8 +47,8 @@ class Careers extends MY_Controller {
                         $options=array(
                             'from_email'      =>   $this->input->post('from_email'), //example: noreply@yourcompany.com
                             'to_email'    =>   $this->input->post('to_email'), //example: you@youremail.com
-                            'company' => $this->input->post('company'),
-                            'cv_path' => $this->input->post('cv_path')                            
+                            'company' => $this->input->post('company')/*,
+                            'cv_path' => $this->input->post('cv_path')*/                            
                         );
                         update_option('options',$options);
                         $this->_render('pages/main_view',$renderData);
@@ -66,21 +66,10 @@ class Careers extends MY_Controller {
 			$this->lang->load('careers');		
 
 			$this->title = "Careers";
-			$this->keywords = "bazarstore careers, bazarstore jobs";		
+			$this->keywords = "wee careers, wee jobs";		
 		
             $this->_render('pages/main_view',$renderData);
 	}
-	
-	public function human_resource($renderData="")
-	{
-			// load language file
-			$this->lang->load('careers');		
-
-			$this->title = "Human Resource";
-			$this->keywords = "bazarstore careers, bazarstore jobs";		
-		
-            $this->_render('pages/hr_view',$renderData);
-	}	
         
         public function hiring($renderData="")
         {
@@ -88,7 +77,7 @@ class Careers extends MY_Controller {
 			$this->lang->load('careers');
 						
 			$this->title = "Vacancy Explorer - Careers";
-			$this->keywords = "bazarstore careers, bazarstore jobs";			
+			$this->keywords = "wee careers, wee jobs";			
 			
             $this->load->model('Career_model');
             $result = $this->Career_model->get_all_positions();            
@@ -106,7 +95,7 @@ class Careers extends MY_Controller {
 			$this->lang->load('careers');
 						
 			$this->title = "Apply Now - Careers";
-			$this->keywords = "bazarstore careers, bazarstore jobs";			
+			$this->keywords = "wee careers, wee jobs";			
 			
             $this->load->model('Career_model');
             $result = $this->Career_model->job_positions();                                    
@@ -128,7 +117,7 @@ class Careers extends MY_Controller {
 			$this->lang->load('careers');			
 			
 			$this->title = "Post Job (Admin) - Careers";
-			$this->keywords = "bazarstore careers, bazarstore jobs";			
+			$this->keywords = "wee careers, wee jobs";			
 			
             $this->load->model('Career_model');
             $result = $this->Career_model->get_all_departments();                                    
@@ -149,7 +138,7 @@ class Careers extends MY_Controller {
 			$this->lang->load('careers');			
 			
 			$this->title = "Job Applications (Admin) - Careers";
-			$this->keywords = "bazarstore careers, bazarstore jobs";			
+			$this->keywords = "wee careers, wee jobs";			
 			
             $this->load->model('Career_model');
             $result = $this->Career_model->get_all_applications();            
@@ -165,7 +154,7 @@ class Careers extends MY_Controller {
 			$this->lang->load('careers');			
 			
 			$this->title = "Submit Job Application - Careers";
-			$this->keywords = "bazarstore careers, bazarstore jobs";			
+			$this->keywords = "wee careers, wee jobs";			
 			
             $this->load->library('user_agent');
             $this->load->model('Career_model');
@@ -304,7 +293,7 @@ class Careers extends MY_Controller {
 			$this->lang->load('careers');			
 			
 			$this->title = "Submit Job (Admin) - Careers";
-			$this->keywords = "bazarstore careers, bazarstore jobs";			
+			$this->keywords = "wee careers, wee jobs";			
 			
             $this->load->library('user_agent');
             $this->load->model('Career_model');
@@ -436,7 +425,7 @@ class Careers extends MY_Controller {
 			$this->lang->load('careers');			
 			
 			$this->title = "Success - Careers";
-			$this->keywords = "bazarstore careers, bazarstore jobs";			
+			$this->keywords = "wee careers, wee jobs";			
 			
             $title = '';
             if($gender == 'M')
@@ -458,7 +447,7 @@ class Careers extends MY_Controller {
         function show_jobpost_success($title, $renderData="")
         {
 			$this->title = "Success Job Post - Careers";
-			$this->keywords = "bazarstore careers, bazarstore jobs";			
+			$this->keywords = "wee careers, wee jobs";			
 			
             $this->view_data['data'] = 'Thank You, Job with the title: ' . $title . ' has been posted successfully.';
             $this->_render('pages/success_view', $renderData);                        
