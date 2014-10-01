@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://www.bazarstore.az/jobs/';
+$config['base_url']	= '';
 
 /*
 |--------------------------------------------------------------------------
