@@ -42,12 +42,14 @@ $route['default_controller'] = "careers";
 $route['404_override'] = '';
 
 // example: '/en/about' -> use controller 'about'
+$route['^ar/(.+)$'] = "$1";
 $route['^az/(.+)$'] = "$1";
 $route['^en/(.+)$'] = "$1";
 $route['^tr/(.+)$'] = "$1";
 $route['^ru/(.+)$'] = "$1";
  
 // '/en' and '/fr' -> use default controller
+$route['^ar$'] = $route['default_controller'];
 $route['^az$'] = $route['default_controller'];
 $route['^en$'] = $route['default_controller'];
 $route['^tr$'] = $route['default_controller'];
