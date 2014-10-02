@@ -54,6 +54,8 @@ Mike Crittenden (https://github.com/mikecrittenden/codeigniter-installer)
 
 Muhammad Usman (https://github.com/usmanhalalit/option_helper)
 
+Multilingual: http://jeromejaglale.com/doc/php/codeigniter_i18n
+
 
 Author:
 
