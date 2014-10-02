@@ -12,10 +12,10 @@
  else
      echo isActive($pageName,"careers");
          ?>"><a href="<?php echo base_url() . $this->lang->lang(); ?>"><?=lang('careers.home')?></a></li>
- <li class="<?php echo isActive(uri_string(),"careers/hiring"); ?>"><a href="<?php echo base_url() . $this->lang->lang(); ?>careers/hiring"><?=lang('careers.vacancy_explorer')?></a></li>
- <li class="<?php echo isActive(uri_string(),"careers/apply"); ?>"><a href="<?php echo base_url() . $this->lang->lang(); ?>careers/apply"><?=lang('careers.apply_now')?></a></li>
- <li class="<?php echo isActive(uri_string(),"careers/post_job"); ?>"><a href="<?php echo base_url() . $this->lang->lang(); ?>careers/post_job"><?=lang('careers.post_new_job_admin')?></a></li>
- <li class="<?php echo isActive(uri_string(),"careers/job_applications"); ?>"><a href="<?php echo base_url() . $this->lang->lang(); ?>careers/job_applications"><?=lang('careers.apply_list_admin')?></a></li>
+ <li class="<?php echo isActive(uri_string(),"careers/hiring"); ?>"><a href="<?php echo base_url() . $this->lang->lang() . '/' ?>careers/hiring"><?=lang('careers.vacancy_explorer')?></a></li>
+ <li class="<?php echo isActive(uri_string(),"careers/apply"); ?>"><a href="<?php echo base_url() . $this->lang->lang() . '/' ?>careers/apply"><?=lang('careers.apply_now')?></a></li>
+ <li class="<?php echo isActive(uri_string(),"careers/post_job"); ?>"><a href="<?php echo base_url() . $this->lang->lang() . '/' ?>careers/post_job"><?=lang('careers.post_new_job_admin')?></a></li>
+ <li class="<?php echo isActive(uri_string(),"careers/job_applications"); ?>"><a href="<?php echo base_url() . $this->lang->lang() . '/' ?>careers/job_applications"><?=lang('careers.apply_list_admin')?></a></li>
 
  <ul class="nav pull-right" id="main-menu-right">
 <li><a rel="tooltip" href="<?php echo base_url(); ?>en/careers" class="<?php if($this->lang->lang() == 'en') {echo 'lang-selected';} ?>">EN</a></li> 
