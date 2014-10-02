@@ -18,10 +18,10 @@
  <li class="<?php echo isActive(uri_string(),"careers/job_applications"); ?>"><a href="<?php echo base_url()?>careers/job_applications"><?=lang('careers.apply_list_admin')?></a></li>
 
  <ul class="nav pull-right" id="main-menu-right">
-<li><a rel="tooltip" href="<?php echo $base_url; ?>en/careers" class="<?php if($this->lang->lang() == 'en') {echo 'lang-selected';} ?>">EN</a></li> 
-<li><a rel="tooltip" href="<?php echo $base_url; ?>ar/careers" class="<?php if($this->lang->lang() == 'ar') {echo 'lang-selected';} ?>">AR</a></li> 
-<li><a rel="tooltip" href="<?php echo $base_url;?>az/careers" class="<?php if($this->lang->lang() == 'az') {echo 'lang-selected';} ?>">AZ</a></li>
-<li><a rel="tooltip" href="<?php echo $base_url; ?>tr/careers" class="<?php if($this->lang->lang() == 'tr') {echo 'lang-selected';} ?>">TR</a></li>
-<li><a rel="tooltip" href="<?php echo $base_url; ?>ru/careers" class="<?php if($this->lang->lang() == 'ru') {echo 'lang-selected';} ?>">RU</a></li>
+<li><a rel="tooltip" href="<?php echo base_url(); ?>en/careers" class="<?php if($this->lang->lang() == 'en') {echo 'lang-selected';} ?>">EN</a></li> 
+<li><a rel="tooltip" href="<?php echo base_url(); ?>ar/careers" class="<?php if($this->lang->lang() == 'ar') {echo 'lang-selected';} ?>">AR</a></li> 
+<li><a rel="tooltip" href="<?php echo base_url();?>az/careers" class="<?php if($this->lang->lang() == 'az') {echo 'lang-selected';} ?>">AZ</a></li>
+<li><a rel="tooltip" href="<?php echo base_url(); ?>tr/careers" class="<?php if($this->lang->lang() == 'tr') {echo 'lang-selected';} ?>">TR</a></li>
+<li><a rel="tooltip" href="<?php echo base_url(); ?>ru/careers" class="<?php if($this->lang->lang() == 'ru') {echo 'lang-selected';} ?>">RU</a></li>
  </ul>
 </div>
