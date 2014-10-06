@@ -14,11 +14,14 @@
 
 <link rel="stylesheet" href="<?php echo base_url(CSS."font-awesome.min.css");?>">
 <link rel="stylesheet" href="<?php echo base_url(CSS."font-awesome-ie7.min.css");?>">
-<?php /*
-<link rel="stylesheet/less" type="text/css" href="<?php echo base_url(CSS."bootstrap.less"); ?>">
-*/ ?>
-<link rel="stylesheet" href="<?php echo base_url(CSS."style.css");?>">
-<link rel="stylesheet" href="<?php echo base_url(CSS."global.css");?>">
+
+<link rel="stylesheet" href="<?php echo base_url(CSS."bootstrap.min.css");?>">
+<link rel="stylesheet" href="<?php echo base_url(CSS."bootstrap-theme.min.css");?>">
+<link rel="stylesheet" href="<?php echo base_url(CSS."style.min.css");?>">
+
+<?php if($this->lang->lang() == "ar") { ?>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url(CSS."bootstrap-rtl.min.css"); ?>">
+<?php } ?>
 
 <!-- extra CSS-->
 <?php foreach($css as $c):?>
