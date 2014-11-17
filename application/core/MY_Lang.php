@@ -22,7 +22,8 @@ class MY_Lang extends CI_Lang {
 	// special URIs (not localized)
 	var $special = array (
 		"admin",
-		"options"
+		"options",
+		"get_languages"
 	);
 	
 	// where to redirect if no language in URI

@@ -1,8 +1,8 @@
 <!doctype html>
-<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en" ng-app> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en" ng-app> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"ng-app> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" ng-app="weeCareers"> <!--<![endif]-->
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -22,6 +22,9 @@
 <?php if($this->lang->lang() == "ar") { ?>
 <link rel="stylesheet" type="text/css" href="<?php echo base_url(CSS."bootstrap-rtl.min.css"); ?>">
 <?php } ?>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.4/angular.min.js"></script>
+<script src="<?php echo base_url(JS."ui-bootstrap-tpls-0.11.2.min.js");?>"></script>
 
 <!-- extra CSS-->
 <?php foreach($css as $c):?>

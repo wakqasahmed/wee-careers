@@ -224,7 +224,7 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = '';
+$config['encryption_key'] = ')(*&^%$#@!';
 
 /*
 |--------------------------------------------------------------------------
@@ -356,6 +356,15 @@ $config['rewrite_short_tags'] = FALSE;
 |
 */
 $config['proxy_ips'] = '';
+
+
+//Set Google reCaptcha api keys - http://google.com/recaptcha
+$config['security']['recaptcha_public_key'] = 'ENTER_RECAPTCHA_PUBLIC_KEY_HERE';
+$config['security']['recaptcha_private_key'] = 'ENTER_RECAPTCHA_PRIVATE_KEY_HERE';
+
+//Google Recaptcha for dothetrix.com
+$config['security']['recaptcha_public_key'] = '6LeIIvwSAAAAAMXyt7ukcLUN2rxNI9x6H4O3JN3L';
+$config['security']['recaptcha_private_key'] = '6LeIIvwSAAAAADeJPJgqvc89ZO2myRlzEH7iN1Kb';
 
 
 /* End of file config.php */
