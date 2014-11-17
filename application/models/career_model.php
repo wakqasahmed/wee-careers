@@ -60,12 +60,15 @@ Class Career_model extends CI_Model
         return $this->db->query($query);
     }
 
-    function get_all_positions()
+    function get_all_positions($lang = 'en')
     {
-        $query = "SELECT p.ID, p.title, d.title AS 'dept_title', p.status, p.description, p.num_of_positions, p.posted_date FROM positions p LEFT JOIN departments d
+        $data = array(
+              'lang' => $lang);
+        $query = "SELECT p.ID, p.title, d.title AS 'dept_title', p.status, p.description, p.num_of_positions, p.posted_date, p.location FROM positions p LEFT JOIN departments d
                 ON p.department_id = d.ID
+                WHERE p.lang = ?
                 ORDER BY p.posted_date DESC;";
-        return $this->db->query($query);
+        return $this->db->query($query, $data);
     }
 
     function get_all_applications()

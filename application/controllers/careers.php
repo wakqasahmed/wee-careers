@@ -64,7 +64,26 @@ class Careers extends MY_Controller {
                 //code for setting options in options table ends
             }
         }
+/*
+        public function is_rtl()
+        {
+          $lang_dir = [
+            "en" => "ltr",
+            "ar" => "rtl",
+            "az" => "ltr",
+            "tr" => "ltr",
+            "ru" => "ltr"
+          ];
 
+          foreach($key => $value in $lang_dir)
+          {
+            if($this->lang->lang() == $key && $lang_dir[$key] == "rtl")
+              return true;
+            else
+              return false;
+          }
+        }
+*/
 	public function index($renderData="")
 	{
 			// load language file
@@ -85,7 +104,7 @@ class Careers extends MY_Controller {
 			$this->keywords = "wee careers, wee jobs";
 
             $this->load->model('Career_model');
-            $result = $this->Career_model->get_all_positions();
+            $result = $this->Career_model->get_all_positions($this->lang->lang());
 
             $this->view_data['positions'] = $result;
 
@@ -360,7 +379,7 @@ class Careers extends MY_Controller {
                 echo '<br>Description: ' . $description;
                 echo '<br>Num of Positions: ' . $num_of_positions;
                 echo '<br>Lang: ' . $lang;
-                echo '<br>Location: ' . $location;                
+                echo '<br>Location: ' . $location;
 
                 $this->Career_model->submit_job($department_id, $title, $status, $description, $num_of_positions, $lang, $ip_address, $location);
 
